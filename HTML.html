@@ -1,0 +1,375 @@
+<!-- Работа выполнена студентом 3ИСИП-621 Еникеевым Евгением -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+</head>
+<body>
+  
+  <h1>№1</h1>
+  <label for="inputField">Введите текст: </label>
+  <input type="text" id="inputField">
+  <p id="outputParagraph">Текст: </p>
+
+  <h1>№2</h1>
+  <input type="number1" id="number1" placeholder="Введите число 1:">
+  <input type="number2" id="number2" placeholder="Введите число 2: ">
+  <input type="number3" id="number3" placeholder="Введите число 3: ">
+  <button onclick="calculateSum()">Посчитать итог</button>
+  <p id="result">Сумма: </p>
+
+  <h1>№3</h1>
+  <input type="NumberInput" id="NumberInput" placeholder="Введите число" onblur="calculateDigitSum()">
+  <p id="digitSum">Сумма цифр: </p>
+
+  <h1>№4</h1>
+  <input type="numbersInput" id="numbersInput" placeholder="Введите числа через запятую" onblur="calculateAverage()">
+  <p id="averageResult">Среднее арифметическое: </p>
+
+  <h1>5</h1>
+  <input type="fio" id="fioInput" placeholder="Введите ФИО" onblur="splitFullName()">
+  <input type="lastname" id="lastName" placeholder="Фамилия" readonly>
+  <input type="firstname" id="firstName" placeholder="Имя" readonly>
+  <input type="middlename" id="middleName" placeholder="Отчество" readonly>
+
+<h1>6</h1>
+<input type="FIO" id="FIOInput" placeholder="Введите ФИО" onblur="capitalizeFullName()">
+
+<h1>7</h1>
+<input type="text" id="textInput" placeholder="Введите текст" onblur="countWords()">
+<p id="wordCountResult">Количество слов: </p>
+
+<h1>8</h1>
+<input type="text" id="dateInput" placeholder="Введите дату в формате 31.12.2016" onblur="formatDate()">
+
+<h1>9</h1>
+<input type="text" id="wordInput" placeholder="Введите слово">
+<button onclick="checkPalindrome()">Проверить</button>
+<p id="palindromeResult"></p>
+
+<h1>10</h1>
+<input type="text" id="numberInput" placeholder="Введите число" onblur="checkNumber()">
+<p id="numberCheckResult"></p>
+
+<h1>11</h1>
+<p>Абзац 1</p>
+<p>Абзац 2</p>
+<p>Абзац 3</p>
+<button onclick="addParagraphNumbers()">Добавить номера</button>
+
+<h1>12</h1>
+<a href="https://ya.ru/">Яндекс</a>
+<a href="https://google.com">Гугл</a>
+<a href="https://github.com">Гитхаб</a>
+<button onclick="addHrefInBrackets()">Сделать ссылку в скобках</button>
+
+<h1>13</h1>
+<a href="https://ya.ru/">Яндекс</a>
+<a href="https://google.com">Гугл</a>
+<a href="https://github.com">Гитхаб</a>
+<button onclick="addArrowToHttpLinks()">Добавить стрелочку</button>
+
+<h1>14</h1>
+<p id="number1">5</p>
+<p id="number2">8</p>
+<p id="number3">12</p>
+<button onclick="squareNumbers()">Возвести в квадрат</button>
+
+<h1>15</h1>
+<input type="text" id="dateInput" placeholder="Введите дату в формате 31.12.2016" onblur="getDayOfWeek()">
+<p id="dayOfWeekResult">День недели: </p>
+
+<h1>16</h1>
+<input type="number" id="numberInput" value="0">
+<button onclick="increment()">+1</button>
+<button onclick="decrement()">-1</button>
+
+<h1>17</h1>
+<input type="text" id="clickCountInput" readonly>
+<p>Абзац 1</p>
+<p>Абзац 2</p>
+<p>Абзац 3</p>
+
+<h1>18</h1>
+<input type="text10" id="randomStringInput" readonly>
+<button onclick="generateRandomString()">Сгенерировать случайную строку</button>
+
+<h1>19</h1>
+<input type="text11" id="inputString" placeholder="Введите строку">
+<button onclick="shuffleCharacters()">Перемешать символы</button>
+
+<h1>20</h1>
+<div id="myDiv" style="border: 1px solid black; margin: 10px; padding: 10px;">Это див</div>
+<button onclick="addStyles()">Добавить стили</button>
+
+<h1>21</h1>
+<ul id="myList">
+  <li>Элемент 1</li>
+  <li>Элемент 2</li>
+  <li>Элемент 3</li>
+</ul>
+<button onclick="addFloatLeft()">Добавить</button>
+
+<h1>22</h1>
+<p id="myParagraph">Это абзац</p>
+<button onclick="applyStrikeThrough()">Перечеркнуть</button>
+<button onclick="applyBold()">Сделать жирным</button>
+<button onclick="applyRedColor()">Сделать красным</button>
+
+<h1>23</h1>
+<div id="elem"></div>
+
+<h1>24</h1>
+<ul>
+  <li>text</li>
+  <li>text</li>
+  <li>text</li>
+  <li>text</li>
+  <li>text</li>
+</ul>
+
+<h1>25</h1>
+<p class="www">elem 1</p>
+<p class="www">elem 2</p>
+<p class="www">elem 3</p>
+
+<h1>26</h1>
+<div id="parent">
+  <p class="www">text</p>
+  <p class="www">text</p>
+  <p class="www">text</p>
+  <p class="ggg">text</p>
+  <p class="ggg">text</p>
+  <p class="ggg">text</p>
+</div>
+
+<h1>27</h1>
+<div id="hello">
+  <p>ЙЦУКЕН</p>
+  <span>йцукенгш</span>
+</div>
+
+<h1>28</h1>
+<div id="Parent">
+  <p>Первый элемент</p>
+  <span>Второй элемент</span>
+  <p>Третий элемент</p>
+</div>
+
+<h1>29</h1>
+<div id="elem">txt<b>tag</b><!--com-->txt<b>tag</b><!--com--></div>
+
+<h1>30</h1>
+<div id="elem">txt<b>tag</b><!--com-->txt<b>tag</b><!--com--></div>
+
+<h1>31</h1>
+<div id="elem">txt<b>tag</b><!--com-->txt<b>tag</b><!--com--></div>
+
+<h1>32</h1>
+<input type="checkbox" id="myCheckbox">
+<button onclick="checkCheckbox()">Отметить</button>
+<button onclick="uncheckCheckbox()">Снять отметку</button>
+
+<h1>33</h1>
+<input type="checkbox" id="myCheckbox">
+<button onclick="updateText()">Обновить текст</button>
+<p id="myParagraph"></p>
+
+<h1>34</h1>
+<input type="checkbox" id="myCheckbox">
+<button onclick="toggleCheckbox()">Сменить состояние</button>
+
+<h1>35</h1>
+<input type="radio" name="radioGroup" value="Option 1" id="option1">
+<input type="radio" name="radioGroup" value="Option 2" id="option2">
+<input type="radio" name="radioGroup" value="Option 3" id="option3">
+<button onclick="displaySelectedValue()">Показать value</button>
+<p id="resultParagraph"></p>
+
+<h1>36</h1>
+<input type="text" id="textInput" oninput="checkTextLength()">
+
+<h1>37</h1>
+<input type="text" id="textInput" oninput="checkTextLength()">
+<p id="messageParagraph"></p>
+
+<h1>38</h1>
+<input type="text" id="input1" oninput="checkInputLength(this, 'input2')">
+<input type="text" id="input2" oninput="checkInputLength(this, null)">
+
+<h1>39</h1>
+<select id="mySelect">
+  <option value="option1">Пункт 1</option>
+  <option value="option2">Пункт 2</option>
+  <option value="option3">Пункт 3</option>
+</select>
+<button onclick="displaySelectedText()">Показать выбранный пункт</button>
+<p id="resultParagraph"></p>
+
+<h1>40</h1>
+<select id="yearSelect" onchange="checkLeapYear()">
+  <option value="2020">2020</option>
+  <option value="2021">2021</option>
+  <option value="2022">2022</option>
+  <option value="2023">2023</option>
+  <option value="2024">2024</option>
+  <option value="2025">2025</option>
+  <option value="2026">2026</option>
+  <option value="2027">2027</option>
+  <option value="2028">2028</option>
+  <option value="2029">2029</option>
+  <option value="2030">2030</option>
+</select>
+<p id="resultParagraph"></p>
+
+<h1>41</h1>
+<select id="dayOfWeekSelect" onchange="checkDayType()">
+  <option value="1">Понедельник</option>
+  <option value="2">Вторник</option>
+  <option value="3">Среда</option>
+  <option value="4">Четверг</option>
+  <option value="5">Пятница</option>
+  <option value="6">Суббота</option>
+  <option value="7">Воскресенье</option>
+</select>
+<p id="resultParagraph"></p>
+
+<h1>42</h1>
+<select id="monthSelect" onchange="displaySelectedMonth()">
+  <option value="1">Январь</option>
+  <option value="2">Февраль</option>
+  <option value="3">Март</option>
+  <option value="4">Апрель</option>
+  <option value="5">Май</option>
+  <option value="6">Июнь</option>
+  <option value="7">Июль</option>
+  <option value="8">Август</option>
+  <option value="9">Сентябрь</option>
+  <option value="10">Октябрь</option>
+  <option value="11">Ноябрь</option>
+  <option value="12">Декабрь</option>
+</select>
+<p id="resultParagraph"></p>
+
+<h1>43</h1>
+<input type="number" id="numberInput" onblur="highlightSelectedOption()">
+<select id="mySelect">
+  <option value="1">Пункт 1</option>
+  <option value="2">Пункт 2</option>
+  <option value="3">Пункт 3</option>
+  <option value="4">Пункт 4</option>
+  <option value="5">Пункт 5</option>
+</select>
+
+<h1>44</h1>
+<select id="dayOfWeekSelect">
+  <option value="1">Понедельник</option>
+  <option value="2">Вторник</option>
+  <option value="3">Среда</option>
+  <option value="4">Четверг</option>
+  <option value="5">Пятница</option>
+  <option value="6">Суббота</option>
+  <option value="7">Воскресенье</option>
+</select>
+
+<h1>45</h1>
+<select id="mySelect">
+  <option value="1">Пункт 1</option>
+  <option value="2">Пункт 2</option>
+  <option value="3">Пункт 3</option>
+  <option value="4">Пункт 4</option>
+  <option value="5">Пункт 5</option>
+</select>
+
+<h1>46</h1>
+<select id="mySelect">
+  <option value="1">Пункт 1</option>
+  <option value="2">Пункт 2</option>
+  <option value="3">Пункт 3</option>
+  <option value="4">Пункт 4</option>
+  <option value="5">Пункт 5</option>
+</select>
+
+<h1>47</h1>
+<select id="mySelect">
+  <option value="1">Пункт 1</option>
+  <option value="2">Пункт 2</option>
+  <option value="3">Пункт 3</option>
+  <option value="4">Пункт 4</option>
+  <option value="5">Пункт 5</option>
+</select>
+<button onclick="selectLastOption()">Отметить последний пункт</button>
+
+<h1>48</h1>
+<input type="text" id="myInput">
+
+<h1>49</h1>
+<input type="text" id="myInput">
+
+<!-- <h1>50</h1>
+
+<h1>51</h1> -->
+
+<h1>52</h1>
+<input type="text" id="textInput">
+<p id="paragraph"></p>
+
+<h1>53</h1>
+<ul id="elem">
+  <li>text</li>
+  <li>text</li>
+  <li>text</li>
+  <li>text</li>
+  <li>text</li>
+</ul>
+
+<h1>54</h1>
+<a href="https://example.com" class="link">Ссылка 1</a>
+<a href="https://example.org" class="link">Ссылка 2</a>
+<a href="https://example.net" class="link">Ссылка 3</a>
+
+<h1>55</h1>
+<input type="text" id="input1" placeholder="Введите число">
+<input type="text" id="input2" placeholder="Введите число">
+<p id="resultParagraph"></p>
+<a href="#" id="calculateLink">Посчитать сумму</a>
+
+<h1>56</h1>
+<div id="outer" style="border: 2px solid blue; padding: 10px;">
+  <div id="middle" style="border: 2px solid green; padding: 10px;">
+    <div id="inner" style="border: 2px solid red; padding: 10px;">
+        <button id="myButton">Нажми меня</button>
+      </div>
+  </div>
+</div>
+
+<h1>57</h1>
+<input type="text" id="myInput">
+
+<h1>58</h1>
+<ul id="elem">
+  <li>text 1</li>
+  <li>text 2</li>
+  <li>text 3</li>
+  <li>text 4</li>
+  <li>text 5</li>
+</ul>
+
+<h1>59</h1>
+<div>
+  <label for="widthInput">Ширина таблицы:</label>
+  <input type="number" id="widthInput" min="1" value="5">
+</div>
+
+<div>
+  <label for="heightInput">Высота таблицы:</label>
+  <input type="number" id="heightInput" min="1" value="10">
+</div>
+
+<button id="generateTableBtn">Создать таблицу</button>
+
+  <script src="JavaScript.js"></script>
+</body>
+</html>
